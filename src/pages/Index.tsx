@@ -2,6 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, Clock, Heart, MapPin, Shield, Users, Sparkles, TrendingUp, Award } from "lucide-react";
+import templeHero from "@/assets/temple-hero.jpg";
+import temple1 from "@/assets/temple-1.jpg";
+import temple2 from "@/assets/temple-2.jpg";
+import temple3 from "@/assets/temple-3.jpg";
+import temple4 from "@/assets/temple-4.jpg";
 
 const Index = () => {
   const scrollToCTA = () => {
@@ -11,9 +16,14 @@ const Index = () => {
   return (
     <div className="min-h-screen font-poppins">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary to-background overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--sacred-gold)/0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(var(--primary)/0.1),transparent_50%)]" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${templeHero})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--sacred-gold)/0.2),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(var(--primary)/0.2),transparent_50%)]" />
         
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
@@ -136,6 +146,90 @@ const Index = () => {
               <Badge variant="outline" className="px-4 py-2">🔱 Kedarnath</Badge>
               <Badge variant="outline" className="px-4 py-2">🌺 Shirdi Sai</Badge>
               <Badge variant="outline" className="px-4 py-2">🪷 Golden Temple</Badge>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Temples Gallery */}
+      <section className="py-20 bg-gradient-to-br from-background via-secondary/30 to-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">Experience Sacred Destinations</h2>
+            <p className="text-xl text-muted-foreground">Connect with India's most revered pilgrimage sites</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="aspect-square">
+                <img 
+                  src={temple1} 
+                  alt="Tirupati Balaji Temple with golden gopuram" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent flex items-end p-6">
+                <div className="transform transition-transform duration-300 group-hover:translate-y-0 translate-y-2">
+                  <h3 className="text-xl font-bold text-foreground mb-1">Tirupati Balaji</h3>
+                  <p className="text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Sacred abode in Andhra Pradesh
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="aspect-square">
+                <img 
+                  src={temple2} 
+                  alt="Vaishno Devi cave temple with mountain backdrop" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent flex items-end p-6">
+                <div className="transform transition-transform duration-300 group-hover:translate-y-0 translate-y-2">
+                  <h3 className="text-xl font-bold text-foreground mb-1">Vaishno Devi</h3>
+                  <p className="text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Divine cave shrine in Jammu
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="aspect-square">
+                <img 
+                  src={temple3} 
+                  alt="Golden Temple Amritsar reflecting in sacred pool" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent flex items-end p-6">
+                <div className="transform transition-transform duration-300 group-hover:translate-y-0 translate-y-2">
+                  <h3 className="text-xl font-bold text-foreground mb-1">Golden Temple</h3>
+                  <p className="text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Serene sanctuary in Amritsar
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="aspect-square">
+                <img 
+                  src={temple4} 
+                  alt="Kedarnath temple in Himalayan mountains" 
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent flex items-end p-6">
+                <div className="transform transition-transform duration-300 group-hover:translate-y-0 translate-y-2">
+                  <h3 className="text-xl font-bold text-foreground mb-1">Kedarnath</h3>
+                  <p className="text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Himalayan spiritual destination
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
