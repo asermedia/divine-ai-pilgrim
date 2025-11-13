@@ -235,6 +235,42 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-foreground">See UPOS in Action</h2>
+            <p className="text-xl text-muted-foreground">Watch how we're transforming the pilgrimage experience</p>
+          </div>
+          
+          <div className="max-w-5xl mx-auto">
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/20 bg-secondary/50">
+              {/* Video placeholder - replace with actual video element */}
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
+                <div className="text-center">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                    <svg className="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <p className="text-muted-foreground">Video coming soon</p>
+                </div>
+              </div>
+              {/* Uncomment and add your video source when ready:
+              <video 
+                className="w-full h-full object-cover" 
+                controls
+                poster="path-to-poster-image.jpg"
+              >
+                <source src="path-to-your-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              */}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* AI Advantage Section */}
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
