@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { CheckCircle2, Clock, Heart, MapPin, Shield, Users, Sparkles, TrendingUp, Award } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import templeHero from "@/assets/temple-hero.jpg";
 import temple1 from "@/assets/temple-1.jpg";
 import temple2 from "@/assets/temple-2.jpg";
@@ -10,6 +12,8 @@ import temple4 from "@/assets/temple-4.jpg";
 import pauseVideo from "@/assets/pause_video.mp4";
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   const scrollToCTA = () => {
     document.getElementById('early-access')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -25,6 +29,57 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--sacred-gold)/0.2),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(var(--primary)/0.2),transparent_50%)]" />
+        
+        {/* Login Buttons */}
+        <div className="absolute top-6 right-6 z-10 flex gap-3">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" size="lg">
+                Login as Devotee
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Welcome to UPOS</DialogTitle>
+                <DialogDescription>
+                  Are you a devotee looking to avail the UPOS services?
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex flex-col gap-4 pt-4">
+                <Button size="lg" onClick={() => navigate('/register')}>
+                  Yes, Register Now
+                </Button>
+                <Button variant="outline" size="lg" onClick={() => navigate('/login')}>
+                  Already have an account? Login
+                </Button>
+              </div>
+            </DialogContent>
+          </Dialog>
+
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="secondary" size="lg">
+                Login as Temple
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Temple Registration</DialogTitle>
+                <DialogDescription>
+                  Are you a temple looking to join UPOS?
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex flex-col gap-4 pt-4">
+                <Button size="lg" onClick={() => navigate('/register')}>
+                  Yes, Register Temple
+                </Button>
+                <Button variant="outline" size="lg" onClick={() => navigate('/login')}>
+                  Already registered? Login
+                </Button>
+              </div>
+            </DialogContent>
+          </Dialog>
+        </div>
         
         <div className="container mx-auto px-4 py-20 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
