@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { CheckCircle2, Clock, Heart, MapPin, Shield, Users, Sparkles, TrendingUp, Award } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Chatbot } from "@/components/Chatbot";
 import templeHero from "@/assets/temple-hero.jpg";
 import temple1 from "@/assets/temple-1.jpg";
 import temple2 from "@/assets/temple-2.jpg";
@@ -647,6 +648,9 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Chatbot */}
+      <Chatbot />
     </div>
   );
 };
